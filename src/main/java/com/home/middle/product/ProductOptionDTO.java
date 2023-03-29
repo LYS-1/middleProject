@@ -6,9 +6,10 @@ public class ProductOptionDTO {
 	private Long productPrice;
 	private Long productStock;
 	private String optionName;
-	private String optionValue;
+	
 	private Long ref;
 	private Long depth;
+	private String optionValue;
 	
 	
 	public Long getRef() {

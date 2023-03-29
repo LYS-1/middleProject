@@ -24,6 +24,7 @@ public class ProductDTO {
 	public void setFileDTOs(List<ProductFileDTO> fileDTOs) {
 		this.fileDTOs = fileDTOs;
 	}
+	
 	public List<ProductOptionDTO> getOptionDTOs() {
 		return optionDTOs;
 	}

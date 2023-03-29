@@ -1,5 +1,7 @@
 package com.home.middle.product;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -22,5 +24,13 @@ public class ProductDAO {
 	
 	public Long productOptionNum() throws Exception{
 		return sqlSession.selectOne(NAMESPACE + "productOptionNum");
+	}
+	
+	public List<ProductOptionDTO> getProductOptionDetail(ProductDTO productDTO) throws Exception{
+		return sqlSession.selectList(NAMESPACE + "getProductOptionDetail", productDTO);
+	}
+	
+	public List<ProductOptionDTO> getOption(ProductOptionDTO productOptionDTO) throws Exception{
+		return sqlSession.selectList(NAMESPACE + "getOption", productOptionDTO);
 	}
 }

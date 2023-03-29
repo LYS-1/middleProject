@@ -7,6 +7,13 @@
 	<select id="productOptionNum" resultType="Long">
 		SELECT PRODUCTOPTION_SEQ.NEXTVAL FROM DUAL
 	</select>
+	<select id="getProductOptionDetail" parameterType="ProductDTO" resultType="ProductOptionDTO">
+		SELECT * FROM PRODUCTOPTION WHERE PRODUCTNUM = #{productNum} ORDER BY OPTIONNUM ASC
+	</select>
+	<select id="getOption" parameterType="ProductOptionDTO" resultType="ProductOptionDTO">
+		SELECT * FROM PRODUCTOPTION WHERE PRODUCTNUM = #{productNum} AND REF = #{ref} AND DEPTH = #{depth} ORDER BY OPTIONNUM ASC
+	</select>
+	
 	
  	<insert id="productOptionAdd0" parameterType="ProductOptionDTO">
  		INSERT INTO PRODUCTOPTION (OPTIONNUM, PRODUCTNUM, OPTIONNAME, OPTIONVALUE, PRODUCTPRICE, PRODUCTSTOCK, REF, DEPTH)

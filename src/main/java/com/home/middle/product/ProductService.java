@@ -1,7 +1,6 @@
 package com.home.middle.product;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -16,6 +15,15 @@ public class ProductService {
 	
 	public int setProductAdd(ProductDTO productDTO) throws Exception{
 		return productDAO.setProductAdd(productDTO);
+	}
+	
+	public ProductDTO getProductOPtionDetail(ProductDTO productDTO) throws Exception{
+		productDTO.setOptionDTOs(productDAO.getProductOptionDetail(productDTO));
+		return productDTO;
+	}
+	
+	public List<ProductOptionDTO> getOption(ProductOptionDTO productOptionDTO) throws Exception{
+		return productDAO.getOption(productOptionDTO);
 	}
 	
 	public int productOptionAdd(String[] optionValue0, String[] optionValue1, String[] optionValue2, String[] optionName, int[] countList, int[] countList2, String[] price, String[] stock) throws Exception{
