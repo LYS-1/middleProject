@@ -13,7 +13,9 @@
 	<select id="getOption" parameterType="ProductOptionDTO" resultType="ProductOptionDTO">
 		SELECT * FROM PRODUCTOPTION WHERE PRODUCTNUM = #{productNum} AND REF = #{ref} AND DEPTH = #{depth} ORDER BY OPTIONNUM ASC
 	</select>
-	
+	<select id="getProductOptionList" parameterType="ProductOptionDTO" resultType="ProductOptionDTO">
+		SELECT * FROM PRODUCTOPTION WHERE PRODUCTNUM = #{productNum} AND DEPTH = #{depth} ORDER BY OPTIONNUM ASC
+	</select>
 	
  	<insert id="productOptionAdd0" parameterType="ProductOptionDTO">
  		INSERT INTO PRODUCTOPTION (OPTIONNUM, PRODUCTNUM, OPTIONNAME, OPTIONVALUE, PRODUCTPRICE, PRODUCTSTOCK, REF, DEPTH)
@@ -23,4 +25,8 @@
  	<insert id="setProductCategoryAdd" parameterType="ProductDTO">
  		INSERT INTO PRODUCT CATEGORYNUM = #{categoryNum} WHERE PRODUCTNUM = #{productNum}
  	</insert>
+ 	
+ 	<delete id="setProductOptionDelete" parameterType="ProductOptionDTO">
+ 		DELETE PRODUCTOPTION WHERE PRODUCTNUM = #{productNum}
+ 	</delete>
 </mapper>

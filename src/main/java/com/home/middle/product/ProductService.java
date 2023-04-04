@@ -26,6 +26,14 @@ public class ProductService {
 		return productDAO.getOption(productOptionDTO);
 	}
 	
+	public List<ProductOptionDTO> getProductOptionList(ProductOptionDTO productOptionDTO) throws Exception{
+		return productDAO.getProductOptionList(productOptionDTO);
+	}
+	
+	public int setProductOptionDelete(ProductOptionDTO productOptionDTO) throws Exception{
+		return productDAO.setProductOptionDelete(productOptionDTO);
+	}
+	
 	public int productOptionAdd(String[] optionValue0, String[] optionValue1, String[] optionValue2, String[] optionName, int[] countList, int[] countList2, String[] price, String[] stock) throws Exception{
 		List<Long> optionNum0 = new ArrayList<Long>();
 		

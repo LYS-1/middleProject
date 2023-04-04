@@ -33,4 +33,12 @@ public class ProductDAO {
 	public List<ProductOptionDTO> getOption(ProductOptionDTO productOptionDTO) throws Exception{
 		return sqlSession.selectList(NAMESPACE + "getOption", productOptionDTO);
 	}
+	
+	public List<ProductOptionDTO> getProductOptionList(ProductOptionDTO productOptionDTO) throws Exception{
+		return sqlSession.selectList(NAMESPACE + "getProductOptionList", productOptionDTO);
+	}
+	
+	public int setProductOptionDelete(ProductOptionDTO productOptionDTO) throws Exception{
+		return sqlSession.delete(NAMESPACE + "setProductOptionDelete", productOptionDTO);
+	}
 }
